@@ -9,18 +9,18 @@ before_install:
   - ./bootstrap
   - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
-   
+
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: "KtrNmxxWvTElP7FQKMCwFco/ZruzrciW9ISU6PFhCMmInCsoIF9njGPV0A1DqzzMeD8J6mp1RXVpGFTvp57dZDV5QtNrfjKEzeS3r1MNbSWBNzAwtFwC50LmLqH7Vkg+tLZPM29UbUYwfM7yvDhkouWrqiRGqQXCmzHWYeA4zF6gVSTqtGQScbFL1Sl7+nrmJM82fSFTSLikOo9UYs2+JsGHYjoMsNtW8tNuSKoPzjLiJuSlP0bVAlF2bXjYfgovzI73zS4KWpMmikNGEPIYZW9TRzc6s5u5teLvloi6YY/wIQCfXtMhgvClTnJvmoOh7sCQVrM1M6vWxr3iA86+QkZbgu2ncnnRtz5b2gxVCWmV3UK3KWc/6tdAsuxNGAwPttohWofj6qaVu56QZKpm4HQd62h2eXhYS+oFmIfsyF5sy+sRooPMs6MW2L8xl1NITqI094JnE32JuUaMQ5hMyzBQPBFlRKJxCObmnPPQG8Y8z1Z8psdo0FTYVKDvX6VMaT7eWRBEURj6myqU3OHJyvVrE3A3IHESJyVUzYDNQC1W9eoxgOWJaZYcxH19ziI1y5NCMHMyp18+UtRCotXlP4jgNywX/OoG+06z6swZNqqziss5FxEZJBxJ3dAhZh9N0+uTUvjeWmmMvJlW0yCOzK0ChCKTWoKnChFhUCuGI/U="
+   - secure: "cmVq8FCrisYjg4eBpMgQg2X5hFPvoXUlDkwPkdw7h/KaHVoheEqJEwXxL0YcUtQVDTbyeD6ZGsNE4XQg7bQ7xL14AfNU4FxbyD2sAW7MMHyQ7c47gTsvb/TK0YH9yN2BQYqmkhhHT81E/C8uKbv2a3qLSLODCH4s27hRyMnQRNsbZmOtetlMHoscaNq6LeD7PKQRJMJ+LH2upUhsvZsty28ZRvMGrd/D0aPDtDjnAGDa6rh1F2dqLpv0Ck6ffDBc377pQw77VBeQzMO4zPVNi1qT7ol8uRlDIgAphl6lkWPw7nJA8oTidFpj8B8v8Bkz5FOz/wP0kVL2CPsiwqu2p+TtOd38MSLeoE/1xuTsCLU3d08M14RlTxZlBkzNQKCIqaJ40XlqqMFby/+446PhiBi1FdEoWr4ZUrQGL5CxQrCeS96aZigpm5U/p/075QnGTOSkxFJTNVDWvF7wALizGmHZmEsF9xMcVnUW7yYr9mFSgmGt+lmMhR7V2Qj+CMjg6lIaJ4KZvKnaoPvTfnRZYB9lyft7UeQ07ILD1vIp/YGm+zOTr5X0GOnmRO6P4PCT/QTjQpbiRT+bNWOar6Ils+v/GRW7NUDxcKAjgv+MtJ+00Y+a9iY65yFZ/7pMvSJJ/Yzx2BMI09J1LYqEmeW3i6iPHaw6AwQKFAoXZBt6JF0="
 
 addons:
   coverity_scan:
     project:
-      name: "mmacala/itc-benchmarks-test"
-      description: ""
+      name: "mmacala/benchmark_local"
+      description: "<Your project description here>"
     notification_email: marco.macala@gmail.com
     build_command_prepend: ""
     build_command: "make"
